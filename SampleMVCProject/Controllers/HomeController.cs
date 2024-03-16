@@ -15,7 +15,29 @@ namespace SampleMVCProject.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            List <Student> st = new List<Student>();
+            string name = "Ashwini";
+            int id = 1;
+
+            Student ss = new Student();
+            ss.name = name;
+            ss.id= id;
+
+            st.Add(ss);
+
+            name = "Ramakrishan";
+            id = 2;
+            Student k= new Student();
+            k.name = name;
+            k.id= id;
+
+            st.Add(k);
+
+            ViewBag.List = st;
+            ViewData["StudentDetails"] = st;
+
+
+            return View(st);
         }
 
         public IActionResult Privacy()
